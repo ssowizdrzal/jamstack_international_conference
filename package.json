@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "jamstack_international_conference",
   "private": true,
   "description": "International Conference",
   "version": "0.1.0",
@@ -22,7 +22,11 @@
     "storyblok-react": "^0.1.2"
   },
   "devDependencies": {
-    "prettier": "^2.4.1"
+    "autoprefixer": "^10.4.0",
+    "gatsby-plugin-postcss": "^5.0.0",
+    "postcss": "^8.3.11",
+    "prettier": "^2.4.1",
+    "tailwindcss": "^2.2.19"
   },
   "keywords": [
     "gatsby"

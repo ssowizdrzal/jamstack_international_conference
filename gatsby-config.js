@@ -40,6 +40,7 @@ module.exports = {
         version: 'draft',
         // languages: ['de', 'at'] // Optional parameter. Omission will retrieve all languages by default.
       }
-    }
+    },
+    'gatsby-plugin-postcss'
   ],
 }
