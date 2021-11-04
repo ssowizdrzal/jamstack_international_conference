@@ -16,7 +16,7 @@ const IndexPage = ({data, location}) =>
   story = useStoryblok(story, location)
   
 
- 
+  // Komentarz
 
   console.log(story)
 
