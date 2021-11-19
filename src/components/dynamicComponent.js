@@ -1,9 +1,11 @@
 import SbEditable from 'storyblok-react'
 import Teaser from './teaser'
+import NavLink from './BlokComponents/nav_link'
 import React from "react"
  
 const Components = {
   'teaser': Teaser,
+  'nav_item': NavLink
 }
  
 const DynamicComponent = ({ blok }) => {

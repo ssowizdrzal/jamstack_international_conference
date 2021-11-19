@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
@@ -18,14 +17,14 @@ const IndexPage = ({data, location}) =>
 
   // Komentarz
 
-  console.log(story)
+  //console.log(story)
 
   const components = story.content.body.map(blok => {
     return (<DynamicComponent blok={blok} key={blok._uid} />)
   })
 
   return(
-    <Layout>
+    <Layout location={location}>
       <Seo title="Home" />
       <h1>{story.content.title}</h1>
       { components }
