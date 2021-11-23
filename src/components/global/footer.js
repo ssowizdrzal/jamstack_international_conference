@@ -1,15 +1,10 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import DynamicComponent from "../dynamicComponent"
 import "../../styles/footer.css"
 
 const Footer = ({ footerContent}) => {
 
 
-  const links = footerContent[0].nav_links.map(blok => {
- 
-    return (<DynamicComponent blok={blok} key={blok._uid} />)
-  });
 
 
   return(
@@ -37,7 +32,8 @@ const Footer = ({ footerContent}) => {
           </Link>
         </h1>
         <ul>
-          {links}
+            <span>USLO</span>
+            <span>USLO</span>
         </ul>
       </div>
     </footer>

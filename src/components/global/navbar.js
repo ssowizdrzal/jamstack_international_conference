@@ -2,19 +2,25 @@ import * as React from "react"
 import { useState } from "react"
 import DynamicComponent from "../dynamicComponent"
 import { Link } from "gatsby"
+import useStoryblok from "../../lib/storyblok"
 
-const Navbar = ({ siteTitle, headerContent }) => {
+const Navbar = ({ siteTitle, headerContent, location }) => {
+
+  let header = useStoryblok(headerContent[0], location)
+
   let [isExpanded, toggleExpansion] = useState(false)
 
-  const links = headerContent[0].nav_links.map(blok => {
+  const links = header.nav_links.map(blok => {
     return <DynamicComponent blok={blok} key={blok._uid} />
   })
 
-  const image = headerContent[0].logo
-  const image_height = headerContent[0].logo_height + "px"
-  const image_width = headerContent[0].logo_width + "px"
-  const logo_flag = Boolean(parseInt(headerContent[0].use_logo))
-  const logo_link = headerContent[0].logo_link.cached_url
+
+
+  const image = header.logo
+  const image_height = header.logo_height + "px"
+  const image_width = header.logo_width + "px"
+  const logo_flag = Boolean(parseInt(header.use_logo))
+  const logo_link = header.logo_link.cached_url
 
   if (logo_flag) {
     return (

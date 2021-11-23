@@ -31,6 +31,11 @@ const Layout = ({ children, location}) => {
   `)
 
   let story = data.global
+
+  if(story && typeof story.content === "string"){
+    story.content = JSON.parse(story.content)
+  }
+  
   console.log(story.content.header)
   story = useStoryblok(story, location)
 

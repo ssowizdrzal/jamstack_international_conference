@@ -37,8 +37,7 @@ module.exports = {
       resolve: 'gatsby-source-storyblok',
       options: {
         accessToken: 'HC0QKOVDQSwyZRvoHxVyVAtt',
-        version: 'draft',
-        // languages: ['de', 'at'] // Optional parameter. Omission will retrieve all languages by default.
+        version: process.env.NODE_ENV === 'production' ? 'published' : 'draft'
       }
     },
     'gatsby-plugin-postcss'

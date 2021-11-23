@@ -8,8 +8,8 @@ const NavLink = ({ blok }) => {
   return (
     <Link
       to={stringed}
-      className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-blue-900 hover:underline mr-4 active:text-blue-900 active:underline mr-4"
-      activeClassName="text-indigo-900"
+      className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-blue-900 hover:underline mr-4"
+      activeClassName="text-indigo-900 underline mr-4"
       partiallyActive={true}
     >
       {blok.name}
