@@ -594,4 +594,13 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+
+}
+.contentArea {
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  display: flex;
 }

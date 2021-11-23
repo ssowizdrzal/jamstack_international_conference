@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `International Conference`,
+    title: `ISAT Conference`,
     description: `Placeholder`,
     
   },

@@ -28,7 +28,7 @@ const Page = ({ pageContext, location }) => {
       style={{ marginBottom: `1.45rem` }}
     />
     <p>
-      "Hello there :) "
+    "Empty :)" 
     </p>
   </Layout>
 )}

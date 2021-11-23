@@ -1,24 +1,12 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import { useStaticQuery, graphql } from "gatsby"
-import useStoryblok from "../lib/storyblok"
-import DynamicComponent from "../components/dynamicComponent"
+import DynamicComponent from "../dynamicComponent"
 
-const Header = ({ siteTitle, location }) => {
+const Header = ({ siteTitle, headerContent}) => {
 
-  const data = useStaticQuery(graphql`
-    query getHeaderQuery {
-      global: storyblokEntry(full_slug: {eq: "global"}) {
-        content 
-      }
-    }
-  `)
 
-  let story = data.global
-
-  story = useStoryblok(story, location)
-  const links = story.content.header[0].nav_links.map(blok => {
+  const links = headerContent[0].nav_links.map(blok => {
  
     return (<DynamicComponent blok={blok} key={blok._uid} />)
   });

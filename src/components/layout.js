@@ -9,8 +9,12 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
+import Header from "./global/header"
+import Footer from "./global/footer"
+import SidePanel from "./global/sidePanel"
 import "../styles/layout.css"
+import useStoryblok from "../lib/storyblok"
+import Navbar from "./global/navbar"
 
 const Layout = ({ children, location}) => {
   const data = useStaticQuery(graphql`
@@ -20,20 +24,50 @@ const Layout = ({ children, location}) => {
           title
         }
       }
+      global: storyblokEntry(full_slug: {eq: "global"}) {
+        content 
+      }
     }
   `)
 
+  let story = data.global
+  console.log(story.content.header)
+  story = useStoryblok(story, location)
+
+  console.log(story.content)
+
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} location={location} />
+      {/* <Header siteTitle={data.site.siteMetadata?.title || `Title`} location={location} headerContent={story.content.header} /> */}
+      {/* NAVBAR */}
+      <Navbar siteTitle={data.site.siteMetadata?.title || `Title`} location={location} headerContent={story.content.header} />
+      {/* END OF NAVBAR */}
       <div
         style={{
-          margin: `0 auto`,
-          maxWidth: 960,
+          maxWidth: visualViewport,
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
-        <main>{children}</main>
+        {/* <!--This is a comment. Comments are not displayed in the browser--> */}
+        <div className="contentArea">
+          <main
+            style={{
+              flexDirection: `row`
+            }}>
+            <section
+              style={{
+                order: `2`,
+              }}>
+              {children} 
+            </section>
+            <aside
+              style={{
+                order: `3`,
+              }}>
+              <SidePanel /> 
+            </aside>
+          </main>
+        </div>
         <footer
           style={{
             marginTop: `2rem`,
@@ -43,7 +77,9 @@ const Layout = ({ children, location}) => {
           {` `}
           <a href="https://www.gatsbyjs.com">Gatsby</a>
         </footer>
+      
       </div>
+      <Footer footerContent={story.content.header}/>
     </>
   )
 }
