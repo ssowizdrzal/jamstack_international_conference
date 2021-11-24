@@ -9,7 +9,7 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./global/header"
+
 import Footer from "./global/footer"
 import SidePanel from "./global/sidePanel"
 import "../styles/layout.css"
@@ -43,7 +43,6 @@ const Layout = ({ children, location}) => {
 
   return (
     <>
-      {/* <Header siteTitle={data.site.siteMetadata?.title || `Title`} location={location} headerContent={story.content.header} /> */}
       {/* NAVBAR */}
       <Navbar siteTitle={data.site.siteMetadata?.title || `Title`} location={location} headerContent={story.content.header} />
       {/* END OF NAVBAR */}
@@ -84,7 +83,7 @@ const Layout = ({ children, location}) => {
         </footer>
       
       </div>
-      <Footer footerContent={story.content.header}/>
+      <Footer location={location} footerContent={story.content.footer} />
     </>
   )
 }

@@ -2,10 +2,18 @@ import SbEditable from 'storyblok-react'
 import Teaser from './teaser'
 import NavLink from './BlokComponents/nav_link'
 import React from "react"
+import Paragraph from './BlokComponents/paragraph'
+import Span from './BlokComponents/span'
+import TextSpan from './BlokComponents/text'
+import Link from './BlokComponents/link'
  
 const Components = {
   'teaser': Teaser,
-  'nav_item': NavLink
+  'nav_item': NavLink,
+  'paragraph': Paragraph,
+  'span': Span,
+  'text': TextSpan,
+  'external_link': Link
 }
  
 const DynamicComponent = ({ blok }) => {
