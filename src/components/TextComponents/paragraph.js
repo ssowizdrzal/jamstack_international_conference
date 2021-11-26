@@ -1,7 +1,10 @@
 import * as React from "react"
 
 const Paragraph = ({ blok }) => {
-  switch (blok.style) {
+
+  console.log(blok.style[0])
+
+  switch (blok.style[0]) {
     case "h1":
       return (
         <h1 className={`${blok.text_size[0]} ${blok.align[0]}`}>{blok.text}</h1>

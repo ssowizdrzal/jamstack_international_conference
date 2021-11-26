@@ -34,10 +34,7 @@ const Layout = ({ children, location}) => {
   if(story && typeof story.content === "string"){
     story.content = JSON.parse(story.content)
   }
-  
-  console.log(story.content.header)
-  console.log(story.content)
-
+  console.log({children})
   return (
     <>
       {/* NAVBAR */}

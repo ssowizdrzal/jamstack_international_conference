@@ -5,7 +5,7 @@ const Span = ({ blok }) => {
   const span_parts = blok.span_tabs.map(blok => {
     return <DynamicComponent blok={blok} key={blok._uid} editable={false} />
   })
-  switch (blok.style) {
+  switch (blok.style[0]) {
     case "small":
       return (
         <small
