@@ -6,7 +6,7 @@ const InternalLink = ({ blok }) => {
   const stringed = "/" + url + "/"
 
   return (
-    <Link
+    <Link className=""
       to={stringed}
     >
       {blok.name}

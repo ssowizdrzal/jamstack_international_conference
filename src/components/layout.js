@@ -10,11 +10,10 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 
-import Footer from "./global/footer"
-import SidePanel from "./global/sidePanel"
+import Footer from "./GlobalComponents/footer"
+import SidePanel from "./GlobalComponents/sidePanel"
 import "../styles/layout.css"
-import useStoryblok from "../lib/storyblok"
-import Navbar from "./global/navbar"
+import Navbar from "./GlobalComponents/navbar"
 
 const Layout = ({ children, location}) => {
   const data = useStaticQuery(graphql`
@@ -37,8 +36,6 @@ const Layout = ({ children, location}) => {
   }
   
   console.log(story.content.header)
-  story = useStoryblok(story, location)
-
   console.log(story.content)
 
   return (
@@ -46,15 +43,15 @@ const Layout = ({ children, location}) => {
       {/* NAVBAR */}
       <Navbar siteTitle={data.site.siteMetadata?.title || `Title`} location={location} headerContent={story.content.header} />
       {/* END OF NAVBAR */}
-      <div
+      <div className=" min-h-screen"
         style={{
           maxWidth: visualViewport,
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
         {/* <!--This is a comment. Comments are not displayed in the browser--> */}
-        <div className="contentArea">
-          <main
+        <div className="contentArea min-h-full">
+          <main 
             style={{
               flexDirection: `row`
             }}>
@@ -72,16 +69,6 @@ const Layout = ({ children, location}) => {
             </aside>
           </main>
         </div>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      
       </div>
       <Footer location={location} footerContent={story.content.footer} />
     </>

@@ -2,7 +2,7 @@ import * as React from "react"
 
 const TextSpan = ({ blok }) => {
 
-  return <span>{blok.text}</span>
+  return <span>{blok.text} </span>
   
 }
 
