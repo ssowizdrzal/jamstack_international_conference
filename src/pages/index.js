@@ -25,14 +25,6 @@ const IndexPage = ({data, location}) =>
       <Seo title="Home" />
       <h1>{story.content.title}</h1>
       { components }
-      <StaticImage
-        src="../images/gatsby-astronaut.png"
-        width={300}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt="A Gatsby astronaut"
-        style={{ marginBottom: `1.45rem` }}
-      />
       <p>
         "Empty :)" 
       </p>

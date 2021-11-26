@@ -19,14 +19,6 @@ const Page = ({ pageContext, location }) => {
     <Seo title={ story.content.title }/>
     <h1>{ story.content.title }</h1>
     { components }
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
     <p>
     "Empty :)" 
     </p>
