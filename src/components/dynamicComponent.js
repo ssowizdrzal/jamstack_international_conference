@@ -7,6 +7,7 @@ import TextSpan from './TextComponents/text'
 import Link from './TextComponents/link'
 import Grid from './grid'
 import Flex from './flex'
+import Slider from './ContentComponents/slide'
  
 const Components = {
   'teaser': Teaser,
@@ -16,6 +17,7 @@ const Components = {
   'link': Link,
   'grid': Grid,
   'flex': Flex,
+  'slide': Slider
 }
  
 const DynamicComponent = ({ blok, editable=true }) => {
