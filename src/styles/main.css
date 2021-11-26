@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    html {
+        @apply text-gray-900
+    }
+    .disclaimers > *{
+        @apply pt-1 pl-2 pr-2  mb-0
+    }
+  }
+
