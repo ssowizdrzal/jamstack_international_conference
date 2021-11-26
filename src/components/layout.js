@@ -13,8 +13,7 @@ import Footer from "./GlobalComponents/footer"
 import SidePanel from "./GlobalComponents/sidePanel"
 import "../styles/layout.css"
 import Navbar from "./GlobalComponents/navbar"
-import "../styles/global.css"
-import "../styles/main.css"
+
 
 const Layout = ({ children, location }) => {
   const data = useStaticQuery(graphql`

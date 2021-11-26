@@ -30,7 +30,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-storyblok',
       options: {
-        accessToken: `5AWg24027HtqkjKm2gExsAtt`,
+        accessToken: `HC0QKOVDQSwyZRvoHxVyVAtt`,
         version: process.env.NODE_ENV === 'production' ? 'published' : 'draft'
       }
     },
