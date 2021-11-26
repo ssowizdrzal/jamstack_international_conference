@@ -604,3 +604,5 @@ pre tt:after {
 main {
   display: flex;
 }
+
+::selection { background-color: #c4ddff; }

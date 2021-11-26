@@ -5,13 +5,17 @@ import Paragraph from './TextComponents/paragraph'
 import Span from './TextComponents/span'
 import TextSpan from './TextComponents/text'
 import Link from './TextComponents/link'
+import Grid from './grid'
+import Flex from './flex'
  
 const Components = {
   'teaser': Teaser,
   'paragraph': Paragraph,
   'span': Span,
   'text': TextSpan,
-  'link': Link
+  'link': Link,
+  'grid': Grid,
+  'flex': Flex,
 }
  
 const DynamicComponent = ({ blok, editable=true }) => {
