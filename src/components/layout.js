@@ -10,7 +10,6 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Footer from "./GlobalComponents/footer"
-import SidePanel from "./GlobalComponents/sidePanel"
 import "../styles/layout.css"
 import Navbar from "./GlobalComponents/navbar"
 
@@ -33,7 +32,6 @@ const Layout = ({ children, location }) => {
   if (story && typeof story.content === "string") {
     story.content = JSON.parse(story.content)
   }
-  console.log({ children })
   return (
     <>
       <div className="wrapper min-h-screen flex flex-col ">

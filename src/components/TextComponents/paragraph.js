@@ -2,8 +2,6 @@ import * as React from "react"
 
 const Paragraph = ({ blok }) => {
 
-  console.log(blok.style[0])
-
   switch (blok.style[0]) {
     case "h1":
       return (

@@ -8,6 +8,7 @@ import Link from './TextComponents/link'
 import Grid from './grid'
 import Flex from './flex'
 import Slider from './ContentComponents/slide'
+import RichText from './ContentComponents/richtext'
  
 const Components = {
   'teaser': Teaser,
@@ -17,7 +18,8 @@ const Components = {
   'link': Link,
   'grid': Grid,
   'flex': Flex,
-  'slide': Slider
+  'slide': Slider,
+  'richtext': RichText
 }
  
 const DynamicComponent = ({ blok, editable=true }) => {
