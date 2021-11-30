@@ -14,7 +14,6 @@ import SidePanel from "./GlobalComponents/sidePanel"
 import "../styles/layout.css"
 import Navbar from "./GlobalComponents/navbar"
 
-
 const Layout = ({ children, location }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -37,47 +36,36 @@ const Layout = ({ children, location }) => {
   console.log({ children })
   return (
     <>
-      {/* NAVBAR */}
-      <Navbar
-        siteTitle={data.site.siteMetadata?.title || `Title`}
-        location={location}
-        headerContent={story.content.header}
-      />
-      {/* END OF NAVBAR */}
-      <div
-        className=" min-h-screen"
-        style={{
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        {/* <!--This is a comment. Comments are not displayed in the browser--> */}
-        <div className="contentArea min-h-full max-w-screen-70p xl:m-auto">
-          <main 
-            style={{
-              flexDirection: `row`,
-
-            }}
+      <div className="wrapper min-h-screen flex flex-col ">
+        {/* NAVBAR */}
+        <Navbar
+          siteTitle={data.site.siteMetadata?.title || `Title`}
+          location={location}
+          headerContent={story.content.header}
+        />
+        {/* END OF NAVBAR */}
+        {/* MAIN CONTENT */}
+        <div className="contentArea flex-grow ">
+          <main
+          className="p-2"
+          style={{
+            width: `80%`,
+          }}
           >
-            <section  className='m-auto'
-              style={{
-                order: `2`,
-                maxWidth: `65%`,
-              }}
+            <section
+
+
             >
               {children}
             </section>
-            <aside  className='ml-auto'
-              style={{ 
-                order: `1`,
-                maxWidth: `25%`,
-              }}
-            >
-              <SidePanel />
-            </aside>
           </main>
         </div>
+                {/* END OF MAIN CONTENT */}
+        {/* FOOTER */}
+
+        <Footer location={location} footerContent={story.content.footer} />
+           {/* END OF FOOTER */}
       </div>
-      <Footer location={location} footerContent={story.content.footer} />
     </>
   )
 }
