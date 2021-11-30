@@ -47,24 +47,19 @@ const Layout = ({ children, location }) => {
         {/* MAIN CONTENT */}
         <div className="contentArea flex-grow ">
           <main
-          className="p-2"
-          style={{
-            width: `80%`,
-          }}
+            className="p-2"
+            style={{
+              width: `80%`,
+            }}
           >
-            <section
-
-
-            >
-              {children}
-            </section>
+            <section>{children}</section>
           </main>
         </div>
-                {/* END OF MAIN CONTENT */}
+        {/* END OF MAIN CONTENT */}
         {/* FOOTER */}
 
         <Footer location={location} footerContent={story.content.footer} />
-           {/* END OF FOOTER */}
+        {/* END OF FOOTER */}
       </div>
     </>
   )
