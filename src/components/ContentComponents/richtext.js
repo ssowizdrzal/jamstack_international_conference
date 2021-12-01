@@ -1,5 +1,6 @@
 import React from 'react'
 import { render} from 'storyblok-rich-text-react-renderer';
+import Flex from '../flex';
 
 const RichText = ({blok}) => { 
 
@@ -7,19 +8,15 @@ const RichText = ({blok}) => {
     return (
         <div>
          {
-             render(blok.richtext)
-            // render(story.content.long_text, {
-            //   nodeResolvers: {
-            //     [NODE_CODEBLOCK]: (children, story) => {
-            //         return (
-            //             <pre>
-            //               <code { ...story }>{ children }</code>
-            //             </pre>
-            //         )
-            //       }
-            //     }
-            //   }
-            // )
+             render(blok.richtext
+              , {
+
+              blokResolvers: {
+                ['flex']: (props) => <Flex blok = {props} />
+            }
+          }
+          )
+          
           }
         </div>
     )

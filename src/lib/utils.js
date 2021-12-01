@@ -1,9 +1,11 @@
-export default function concateArrayOfStrings(array) {
-    let $concated_string = ""
-    if (array.length!==0){
-        array.map((x) => (
-             $concated_string = $concated_string + x + " " ))
-    }
-    return $concated_string
+export function cleanUndefined(string) {
+  let result = ""
+  string === undefined ? (result = "") : (result = string)
+  return result
 }
 
+export function cleanUndefinedWithPrefix(string, prefix) {
+    let result = ""
+    string === undefined ? (result = "") : (result = prefix+string)
+    return result
+  }

@@ -5,10 +5,6 @@ import DynamicComponent from "../dynamicComponent"
 const Footer = ({ location, footerContent }) => {
   let footer = footerContent[0]
 
-  // const features_lists = footer.blocks.map(blok => {
-  //   return <DynamicComponent blok={blok} key={blok._uid} />
-  // })
-
   return (
     <footer
       style={{

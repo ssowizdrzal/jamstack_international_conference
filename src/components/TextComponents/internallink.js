@@ -1,14 +1,13 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { cleanUndefined } from "../../lib/utils"
 
 const InternalLink = ({ blok }) => {
-  const url = blok.link.cached_url
+  const url = cleanUndefined(blok.link.cached_url)
   const stringed = "/" + url + "/"
 
   return (
-    <Link className=""
-      to={stringed}
-    >
+    <Link className="" to={stringed}>
       {blok.name}
     </Link>
   )
