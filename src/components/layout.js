@@ -47,7 +47,10 @@ const Layout = ({ children, location }) => {
           <main
             className="p-2"
             style={{
+              maxWidth: `80%`,
               width: `80%`,
+              marginLeft: 0,
+              marginRight: 0,
             }}
           >
             <section>{children}</section>

@@ -4,7 +4,6 @@ import Flex from '../flex';
 
 const RichText = ({blok}) => { 
 
-    console.log(blok.richtext)
     return (
         <div>
          {

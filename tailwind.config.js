@@ -29,6 +29,7 @@ module.exports = {
       'gap-4',
       'gap-5',
       'font-weight: 700',
+      'h6',
       'h5',
       'h4',
       'h3',

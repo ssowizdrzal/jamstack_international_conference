@@ -28,7 +28,7 @@ const Flex = ({ blok }) => {
   return (
     <div>
       <ul
-        className={`flex mx-auto items-center p-2 ${justify_content} ${direction} ${wrap} ${border_style_sides} ${support_responsive} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${background_color} ${border_radius}`}
+        className={`flex items-center p-2 ${justify_content} ${direction} ${wrap} ${border_style_sides} ${support_responsive} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${background_color} ${border_radius}`}
       >
         {blok.elements.map(blok => (
           <li key={blok._uid} className="px-2">
