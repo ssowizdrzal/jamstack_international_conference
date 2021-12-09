@@ -43,12 +43,12 @@ const Layout = ({ children, location }) => {
         />
         {/* END OF NAVBAR */}
         {/* MAIN CONTENT */}
-        <div className="contentArea flex-grow">
           <main
-            className="p-2"
+            className="p-2  "
             style={{
-              maxWidth: `80%`,
-              width: `80%`,
+              display: `flex`,
+              justifyContent: `center`,
+              flexGrow: 1,
               marginLeft: 0,
               marginRight: 0,
             }}
@@ -56,15 +56,13 @@ const Layout = ({ children, location }) => {
             <section
               style={{
                 overflow: "hidden",
-                width: `100%`,
-                marginLeft: 0,
-                marginRight: 0,
+                maxWidth: `80%`,
+                width: `80%`,
               }}
             >
               {children}
             </section>
           </main>
-        </div>
         {/* END OF MAIN CONTENT */}
         {/* FOOTER */}
 

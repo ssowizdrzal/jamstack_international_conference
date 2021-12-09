@@ -41,8 +41,8 @@ const Span = ({ blok }) => {
   const margin_left = `${blok.margin_left ? blok.margin_left : "5"}px`
 
   return (
-    <span
-      className={` break-words ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
+    <div
+      className={` overflow-hidden break-words ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
         /\s\s+/g,
         " "
       )}
@@ -58,7 +58,7 @@ const Span = ({ blok }) => {
     >
       {" "}
       {elements}{" "}
-    </span>
+    </div>
   )
 }
 

@@ -31,22 +31,21 @@ const Flex = ({ blok }) => {
   // const margin_right = `${blok.margin_right ? blok.margin_right : "5"}px`
 
   return (
-    <div>
-      <div
-        className={`flex container items-center p-2 ${justify_content} ${direction} ${wrap} ${border_style_sides} ${support_responsive} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${background_color} ${border_radius}`}
-        style={{
-          marginTop: margin_top,
-          marginBottom: margin_bot,
-          marginLeft: margin_left,
-          // marginRight: '50px',
-        }}
-      >
-        {blok.elements.map(blok => (
-          <div key={blok._uid} className="px-2 continuum">
-            <DynamicComponent blok={blok} />
-          </div>
-        ))}
-      </div>
+    <div
+      className={`flex container p-2 ${justify_content} ${direction} ${wrap} ${border_style_sides} ${support_responsive} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${background_color} ${border_radius}`}
+      style={{
+        marginTop: margin_top,
+        marginBottom: margin_bot,
+        marginLeft: margin_left,
+        // marginRight: '50px',
+        width: `100%`,
+      }}
+    >
+      {blok.elements.map(blok => (
+        <div key={blok._uid} className="px-2 continuum">
+          <DynamicComponent blok={blok} />
+        </div>
+      ))}
     </div>
   )
 }

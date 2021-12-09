@@ -10,6 +10,7 @@ import Flex from "./flex"
 import RichText from "./ContentComponents/richtext"
 import Image from "./ContentComponents/image"
 import BreakLine from "./TextComponents/breakline"
+import EmptyGrid from "./ContentComponents/emptygrid"
 
 const Components = {
   teaser: Teaser,
@@ -22,6 +23,7 @@ const Components = {
   slide: Image,
   richtext: RichText,
   break_line: BreakLine,
+  empty_grid_space: EmptyGrid
 }
 
 const DynamicComponent = ({ blok, editable = true }) => {

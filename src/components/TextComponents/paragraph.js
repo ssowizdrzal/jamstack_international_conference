@@ -1,15 +1,28 @@
 import * as React from "react"
-import {
-  cleanUndefined,
-  cleanUndefinedWithPrefix,
-  flatStringFromArray,
-} from "../../lib/utils"
+import { cleanUndefined, flatStringFromArray } from "../../lib/utils"
+import { Link } from "gatsby"
 
 const Paragraph = ({ blok }) => {
+  const wrapLink = () => {
+    if (link.url === "" && link.id === "" && link.cached_url === "") {
+      return text 
+    }
+    if (link.linktype === "url" && link.url !== "") {
+      const href_link = cleanUndefined(link.cached_url)
+      return <a href={href_link}>{text}</a>
+    }
+    if (link.linktype === "story" && link.id !== "") {
+      const url = cleanUndefined(link.cached_url)
+      const stringed = "/" + url
+      return <Link to={stringed}>{text}</Link>
+    }
+    return text 
+  }
+
   const P1 = () => {
     return (
       <p
-        className={` break-words align-middle ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
+        className={` break-words align-middle overflow-hidden ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
           /\s\s+/g,
           " "
         )}
@@ -23,7 +36,7 @@ const Paragraph = ({ blok }) => {
           // marginRight: margin_right,
         }}
       >
-        {text}
+        {wrapLink()}
       </p>
     )
   }
@@ -45,14 +58,14 @@ const Paragraph = ({ blok }) => {
           // marginRight: margin_right,
         }}
       >
-        {text}
+        {wrapLink()}
       </h1>
     )
   }
 
   const H2 = () => {
     return (
-      <p
+      <h2
         className={` break-words align-middle ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
           /\s\s+/g,
           " "
@@ -67,12 +80,98 @@ const Paragraph = ({ blok }) => {
           // marginRight: margin_right,
         }}
       >
-        {text}
-      </p>
+        {wrapLink()}
+      </h2>
     )
   }
 
-  
+  const H3 = () => {
+    return (
+      <h3
+        className={` break-words align-middle ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
+          /\s\s+/g,
+          " "
+        )}
+        style={{
+          width: widthVal,
+          height: heightVal,
+          backgroundSize: `${widthVal} ${heightVal}`,
+          marginTop: margin_top,
+          marginBottom: margin_bot,
+          marginLeft: margin_left,
+          // marginRight: margin_right,
+        }}
+      >
+        {wrapLink()}
+      </h3>
+    )
+  }
+
+  const H4 = () => {
+    return (
+      <h4
+        className={` break-words align-middle ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
+          /\s\s+/g,
+          " "
+        )}
+        style={{
+          width: widthVal,
+          height: heightVal,
+          backgroundSize: `${widthVal} ${heightVal}`,
+          marginTop: margin_top,
+          marginBottom: margin_bot,
+          marginLeft: margin_left,
+          // marginRight: margin_right,
+        }}
+      >
+        {wrapLink()}
+      </h4>
+    )
+  }
+
+  const H5 = () => {
+    return (
+      <h5
+        className={` break-words align-middle ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
+          /\s\s+/g,
+          " "
+        )}
+        style={{
+          width: widthVal,
+          height: heightVal,
+          backgroundSize: `${widthVal} ${heightVal}`,
+          marginTop: margin_top,
+          marginBottom: margin_bot,
+          marginLeft: margin_left,
+          // marginRight: margin_right,
+        }}
+      >
+        {wrapLink()}
+      </h5>
+    )
+  }
+
+  const H6 = () => {
+    return (
+      <h6
+        className={` break-words align-middle ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
+          /\s\s+/g,
+          " "
+        )}
+        style={{
+          width: widthVal,
+          height: heightVal,
+          backgroundSize: `${widthVal} ${heightVal}`,
+          marginTop: margin_top,
+          marginBottom: margin_bot,
+          marginLeft: margin_left,
+          // marginRight: margin_right,
+        }}
+      >
+        {wrapLink()}
+      </h6>
+    )
+  }
 
   const text = blok.text
   const style = cleanUndefined(blok.style[0])
@@ -110,150 +209,24 @@ const Paragraph = ({ blok }) => {
   const margin_left = `${blok.margin_left ? blok.margin_left : "5"}px`
   // const margin_right = `${blok.margin_right ? blok.margin_right : "5"}px`
 
-  //styling
+  const link = blok.link
+
   switch (style) {
     case "h1":
-      return (
-        <h1
-          className={` break-words ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
-            /\s\s+/g,
-            " "
-          )}
-          style={{
-            width: widthVal,
-            height: heightVal,
-            backgroundSize: `${widthVal} ${heightVal}`,
-            marginTop: margin_top,
-            marginBottom: margin_bot,
-            marginLeft: margin_left,
-            // marginRight: margin_right,
-          }}
-        >
-          {text}
-        </h1>
-      )
+      return <H1></H1>
     case "h2":
-      return (
-        <h2
-          className={` break-words ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
-            /\s\s+/g,
-            " "
-          )}
-          style={{
-            width: widthVal,
-            height: heightVal,
-            backgroundSize: `${widthVal} ${heightVal}`,
-            marginTop: margin_top,
-            marginBottom: margin_bot,
-            marginLeft: margin_left,
-            // marginRight: margin_right,
-          }}
-        >
-          {text}
-        </h2>
-      )
+      return <H2></H2>
     case "h3":
-      return (
-        <h3
-          className={` break-words ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
-            /\s\s+/g,
-            " "
-          )}
-          style={{
-            width: widthVal,
-            height: heightVal,
-            backgroundSize: `${widthVal} ${heightVal}`,
-            marginTop: margin_top,
-            marginBottom: margin_bot,
-            marginLeft: margin_left,
-            // marginRight: margin_right,
-          }}
-        >
-          {text}
-        </h3>
-      )
+      return <H3></H3>
     case "h4":
-      return (
-        <h4
-          className={` break-words ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
-            /\s\s+/g,
-            " "
-          )}
-          style={{
-            width: widthVal,
-            height: heightVal,
-            backgroundSize: `${widthVal} ${heightVal}`,
-            marginTop: margin_top,
-            marginBottom: margin_bot,
-            marginLeft: margin_left,
-            // marginRight: margin_right,
-          }}
-        >
-          {text}
-        </h4>
-      )
+      return <H4></H4>
     case "h5":
-      return (
-        <h5
-          className={` break-words ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
-            /\s\s+/g,
-            " "
-          )}
-          style={{
-            width: widthVal,
-            height: heightVal,
-            backgroundSize: `${widthVal} ${heightVal}`,
-            marginTop: margin_top,
-            marginBottom: margin_bot,
-            marginLeft: margin_left,
-            // marginRight: margin_right,
-          }}
-        >
-          {text}
-        </h5>
-      )
+      return <H5></H5>
     case "h6":
-      return (
-        <h6
-          className={` break-words ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
-            /\s\s+/g,
-            " "
-          )}
-          style={{
-            width: widthVal,
-            height: heightVal,
-            backgroundSize: `${widthVal} ${heightVal}`,
-            marginTop: margin_top,
-            marginBottom: margin_bot,
-            marginLeft: margin_left,
-            // marginRight: margin_right,
-          }}
-        >
-          {text}
-        </h6>
-      )
+      return <H6></H6>
     case "span":
     default:
-      return (
-        // <p
-        //   className={` break-words align-middle ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
-        //     /\s\s+/g,
-        //     " "
-        //   )}
-        //   style={{
-        //     width: widthVal,
-        //     height: heightVal,
-        //     backgroundSize: `${widthVal} ${heightVal}`,
-        //     marginTop: margin_top,
-        //     marginBottom: margin_bot,
-        //     marginLeft: margin_left,
-        //     // marginRight: margin_right,
-        //   }}
-        // >
-        //   {text}
-        // </p>
-        <P1></P1>
-      )
+      return <P1></P1>
   }
 }
 

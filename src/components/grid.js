@@ -31,11 +31,12 @@ const Grid = ({ blok }) => {
 
   return (
     <div
-      className={`grid p-2 container ${justify_content} ${gap} ${grid_flow} ${grid_columns} ${grid_rows} ${border_style_sides} ${support_responsive} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${background_color} ${border_radius}`}
+      className={`grid p-2 container auto-cols-auto grid-auto-rows ${justify_content} ${gap} ${grid_flow} ${grid_columns} ${grid_rows} ${border_style_sides} ${support_responsive} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${background_color} ${border_radius}`}
       style={{
         marginTop: margin_top,
         marginBottom: margin_bot,
         marginLeft: margin_left,
+        width: `100%`,
       }}
     >
       {blok.elements.map(blok => (
