@@ -3,6 +3,7 @@ import { cleanUndefined } from "../lib/utils"
 import DynamicComponent from "./dynamicComponent"
 
 const Grid = ({ blok }) => {
+  console.log(blok)
   const gap = cleanUndefined(blok.gap[0])
   var grid_flow = cleanUndefined(blok.grid_flow[0])
   const grid_columns = cleanUndefined(blok.grid_columns[0])
@@ -23,17 +24,26 @@ const Grid = ({ blok }) => {
   const padding_right = cleanUndefined(blok.padding_right[0])
   const background_color = cleanUndefined(blok.background_color[0])
   const border_radius = cleanUndefined(blok.border_radius[0])
+
+  const margin_top = `${blok.margin_top ? blok.margin_top : "5"}px`
+  const margin_bot = `${blok.margin_bot ? blok.margin_bot : "5"}px`
+  const margin_left = `${blok.margin_left ? blok.margin_left : "5"}px`
+  // const margin_right = `${blok.margin_right ? blok.margin_right : "5"}px`
+
   return (
-    <div >
-      <ul
-        className={`grid p-2 container ${justify_content} ${gap} ${grid_flow} ${grid_columns} ${grid_rows} ${border_style_sides} ${support_responsive} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${background_color} ${border_radius}`}
-      >
-        {blok.elements.map(blok => (
-          <li key={blok._uid} className="px-2">
-            <DynamicComponent blok={blok} />
-          </li>
-        ))}
-      </ul>
+    <div
+      className={`grid p-2 container ${justify_content} ${gap} ${grid_flow} ${grid_columns} ${grid_rows} ${border_style_sides} ${support_responsive} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${background_color} ${border_radius}`}
+      style={{
+        marginTop: margin_top,
+        marginBottom: margin_bot,
+        marginLeft: margin_left,
+      }}
+    >
+      {blok.elements.map(blok => (
+        <div key={blok._uid} className="px-2 ">
+          <DynamicComponent blok={blok} />
+        </div>
+      ))}
     </div>
   )
 }

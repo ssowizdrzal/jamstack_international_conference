@@ -33,6 +33,12 @@ const Paragraph = ({ blok }) => {
     heightVal = "auto"
   }
   const styling = flatStringFromArray(blok.styling)
+
+  const margin_top = `${blok.margin_top ? blok.margin_top : "5"}px`
+  const margin_bot = `${blok.margin_bot ? blok.margin_bot : "5"}px`
+  const margin_left = `${blok.margin_left ? blok.margin_left : "5"}px`
+  // const margin_right = `${blok.margin_right ? blok.margin_right : "5"}px`
+
   //styling
   switch (style) {
     case "h1":
@@ -43,10 +49,13 @@ const Paragraph = ({ blok }) => {
             " "
           )}
           style={{
-            maxWidth: "80%",
             width: widthVal,
             height: heightVal,
             backgroundSize: `${widthVal} ${heightVal}`,
+            marginTop: margin_top,
+            marginBottom: margin_bot,
+            marginLeft: margin_left,
+            // marginRight: margin_right,
           }}
         >
           {text}
@@ -60,10 +69,13 @@ const Paragraph = ({ blok }) => {
             " "
           )}
           style={{
-            maxWidth: "80%",
             width: widthVal,
             height: heightVal,
             backgroundSize: `${widthVal} ${heightVal}`,
+            marginTop: margin_top,
+            marginBottom: margin_bot,
+            marginLeft: margin_left,
+            // marginRight: margin_right,
           }}
         >
           {text}
@@ -77,10 +89,13 @@ const Paragraph = ({ blok }) => {
             " "
           )}
           style={{
-            maxWidth: "80%",
             width: widthVal,
             height: heightVal,
             backgroundSize: `${widthVal} ${heightVal}`,
+            marginTop: margin_top,
+            marginBottom: margin_bot,
+            marginLeft: margin_left,
+            // marginRight: margin_right,
           }}
         >
           {text}
@@ -94,10 +109,13 @@ const Paragraph = ({ blok }) => {
             " "
           )}
           style={{
-            maxWidth: "80%",
             width: widthVal,
             height: heightVal,
             backgroundSize: `${widthVal} ${heightVal}`,
+            marginTop: margin_top,
+            marginBottom: margin_bot,
+            marginLeft: margin_left,
+            // marginRight: margin_right,
           }}
         >
           {text}
@@ -111,10 +129,13 @@ const Paragraph = ({ blok }) => {
             " "
           )}
           style={{
-            maxWidth: "80%",
             width: widthVal,
             height: heightVal,
             backgroundSize: `${widthVal} ${heightVal}`,
+            marginTop: margin_top,
+            marginBottom: margin_bot,
+            marginLeft: margin_left,
+            // marginRight: margin_right,
           }}
         >
           {text}
@@ -128,10 +149,13 @@ const Paragraph = ({ blok }) => {
             " "
           )}
           style={{
-            maxWidth: "80%",
             width: widthVal,
             height: heightVal,
             backgroundSize: `${widthVal} ${heightVal}`,
+            marginTop: margin_top,
+            marginBottom: margin_bot,
+            marginLeft: margin_left,
+            // marginRight: margin_right,
           }}
         >
           {text}
@@ -142,15 +166,18 @@ const Paragraph = ({ blok }) => {
       return (
         <div>
         <p
-          className={` break-words ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
+          className={` break-words align-middle ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
             /\s\s+/g,
             " "
           )}
           style={{
-            maxWidth: `80%`,
             width: widthVal,
             height: heightVal,
             backgroundSize: `${widthVal} ${heightVal}`,
+            marginTop: margin_top,
+            marginBottom: margin_bot,
+            marginLeft: margin_left,
+            // marginRight: margin_right,
           }}
         >
           {text}

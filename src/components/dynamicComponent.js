@@ -27,7 +27,7 @@ const DynamicComponent = ({ blok, editable = true }) => {
     const Component = Components[blok.component]
     if (editable)
       return (
-        <SbEditable content={blok}>
+        <SbEditable content={blok} >
           <Component blok={blok} />
         </SbEditable>
       )

@@ -605,3 +605,23 @@ main {
 }
 
 ::selection { background-color: #855d81; }
+
+.continuum > div{
+  width: fit-content;
+  height: fit-content;
+}
+
+.continuum {
+  width: fit-content;
+  height: fit-content;
+}
+
+p>#text {
+
+  vertical-align: middle;
+}
+
+main > section > * {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

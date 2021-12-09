@@ -25,17 +25,28 @@ const Flex = ({ blok }) => {
   const background_color = cleanUndefined(blok.background_color[0])
   const border_radius = cleanUndefined(blok.border_radius[0])
 
+  const margin_top = `${blok.margin_top ? blok.margin_top : "5"}px`
+  const margin_bot = `${blok.margin_bot ? blok.margin_bot : "5"}px`
+  const margin_left = `${blok.margin_left ? blok.margin_left : "5"}px`
+  // const margin_right = `${blok.margin_right ? blok.margin_right : "5"}px`
+
   return (
     <div>
-      <ul
-        className={`flex items-center p-2 ${justify_content} ${direction} ${wrap} ${border_style_sides} ${support_responsive} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${background_color} ${border_radius}`}
+      <div
+        className={`flex container items-center p-2 ${justify_content} ${direction} ${wrap} ${border_style_sides} ${support_responsive} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${background_color} ${border_radius}`}
+        style={{
+          marginTop: margin_top,
+          marginBottom: margin_bot,
+          marginLeft: margin_left,
+          // marginRight: '50px',
+        }}
       >
         {blok.elements.map(blok => (
-          <li key={blok._uid} className="px-2">
+          <div key={blok._uid} className="px-2 continuum">
             <DynamicComponent blok={blok} />
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   )
 }
