@@ -43,7 +43,7 @@ const Layout = ({ children, location }) => {
         />
         {/* END OF NAVBAR */}
         {/* MAIN CONTENT */}
-        <div className="contentArea">
+        <div className="contentArea flex-grow">
           <main
             className="p-2"
             style={{

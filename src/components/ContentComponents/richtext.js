@@ -11,7 +11,7 @@ const RichText = ({blok}) => {
               , {
 
               blokResolvers: {
-                ['flex']: (props) => <Flex blok = {props} />
+                'flex': (props) => <Flex blok = {props} />
             }
           }
           )

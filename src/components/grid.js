@@ -3,7 +3,6 @@ import { cleanUndefined } from "../lib/utils"
 import DynamicComponent from "./dynamicComponent"
 
 const Grid = ({ blok }) => {
-  console.log(blok)
   const gap = cleanUndefined(blok.gap[0])
   var grid_flow = cleanUndefined(blok.grid_flow[0])
   const grid_columns = cleanUndefined(blok.grid_columns[0])

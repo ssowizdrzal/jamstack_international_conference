@@ -1,7 +1,78 @@
 import * as React from "react"
-import { cleanUndefined, cleanUndefinedWithPrefix, flatStringFromArray } from "../../lib/utils"
+import {
+  cleanUndefined,
+  cleanUndefinedWithPrefix,
+  flatStringFromArray,
+} from "../../lib/utils"
 
 const Paragraph = ({ blok }) => {
+  const P1 = () => {
+    return (
+      <p
+        className={` break-words align-middle ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
+          /\s\s+/g,
+          " "
+        )}
+        style={{
+          width: widthVal,
+          height: heightVal,
+          backgroundSize: `${widthVal} ${heightVal}`,
+          marginTop: margin_top,
+          marginBottom: margin_bot,
+          marginLeft: margin_left,
+          // marginRight: margin_right,
+        }}
+      >
+        {text}
+      </p>
+    )
+  }
+
+  const H1 = () => {
+    return (
+      <h1
+        className={` break-words align-middle ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
+          /\s\s+/g,
+          " "
+        )}
+        style={{
+          width: widthVal,
+          height: heightVal,
+          backgroundSize: `${widthVal} ${heightVal}`,
+          marginTop: margin_top,
+          marginBottom: margin_bot,
+          marginLeft: margin_left,
+          // marginRight: margin_right,
+        }}
+      >
+        {text}
+      </h1>
+    )
+  }
+
+  const H2 = () => {
+    return (
+      <p
+        className={` break-words align-middle ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
+          /\s\s+/g,
+          " "
+        )}
+        style={{
+          width: widthVal,
+          height: heightVal,
+          backgroundSize: `${widthVal} ${heightVal}`,
+          marginTop: margin_top,
+          marginBottom: margin_bot,
+          marginLeft: margin_left,
+          // marginRight: margin_right,
+        }}
+      >
+        {text}
+      </p>
+    )
+  }
+
+  
 
   const text = blok.text
   const style = cleanUndefined(blok.style[0])
@@ -164,25 +235,24 @@ const Paragraph = ({ blok }) => {
     case "span":
     default:
       return (
-        <div>
-        <p
-          className={` break-words align-middle ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
-            /\s\s+/g,
-            " "
-          )}
-          style={{
-            width: widthVal,
-            height: heightVal,
-            backgroundSize: `${widthVal} ${heightVal}`,
-            marginTop: margin_top,
-            marginBottom: margin_bot,
-            marginLeft: margin_left,
-            // marginRight: margin_right,
-          }}
-        >
-          {text}
-        </p>
-        </div>
+        // <p
+        //   className={` break-words align-middle ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
+        //     /\s\s+/g,
+        //     " "
+        //   )}
+        //   style={{
+        //     width: widthVal,
+        //     height: heightVal,
+        //     backgroundSize: `${widthVal} ${heightVal}`,
+        //     marginTop: margin_top,
+        //     marginBottom: margin_bot,
+        //     marginLeft: margin_left,
+        //     // marginRight: margin_right,
+        //   }}
+        // >
+        //   {text}
+        // </p>
+        <P1></P1>
       )
   }
 }

@@ -9,17 +9,19 @@ import Grid from "./grid"
 import Flex from "./flex"
 import RichText from "./ContentComponents/richtext"
 import Image from "./ContentComponents/image"
+import BreakLine from "./TextComponents/breakline"
 
 const Components = {
   teaser: Teaser,
   paragraph: Paragraph,
-  span: Span,
-  text: TextSpan,
+  span_copy: Span,
+  text_copy: TextSpan,
   link: Link,
   grid: Grid,
   flex: Flex,
   slide: Image,
   richtext: RichText,
+  break_line: BreakLine,
 }
 
 const DynamicComponent = ({ blok, editable = true }) => {
