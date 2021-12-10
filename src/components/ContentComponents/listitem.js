@@ -52,10 +52,7 @@ const ListItem = ({ blok, index }) => {
       })
       return (
         <li key={index}>
-          <p>
-            {" "}
-            {index} {elements}{" "}
-          </p>
+          <p>{elements}</p>
         </li>
       )
     }
