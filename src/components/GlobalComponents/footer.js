@@ -8,7 +8,8 @@ const Footer = ({ location, footerContent }) => {
   return (
     <footer
       style={{
-        background: `rebeccapurple`,
+        background: `
+        transparent`,
       }}
     >
       <div>
@@ -16,7 +17,7 @@ const Footer = ({ location, footerContent }) => {
         <div className=" disclaimers text-white bg-black pb-2">
           {footer &&
             footer.disclaimers.map((blok, index) => (
-              <DynamicComponent blok={blok} key={index} editable={false} />
+              <DynamicComponent blok={blok} key={index} editable={true} />
             ))}
         </div>
         {/* END OF DISCLAIMERS */}

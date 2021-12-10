@@ -10,6 +10,7 @@ const Span = ({ blok }) => {
   const align = cleanUndefined(blok.align[0])
   const color = cleanUndefined(blok.color[0])
   const text_size = cleanUndefined(blok.text_size[0])
+  const line_height = cleanUndefined(blok.line_height[0])
   const padding_top = cleanUndefined(blok.padding_top[0])
   const padding_bot = cleanUndefined(blok.padding_bot[0])
   const padding_left = cleanUndefined(blok.padding_left[0])
@@ -42,7 +43,7 @@ const Span = ({ blok }) => {
 
   return (
     <div
-      className={` overflow-hidden break-words ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
+      className={` overflow-hidden break-words ${line_height} ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
         /\s\s+/g,
         " "
       )}

@@ -48,18 +48,6 @@ const Image = ({ blok }) => {
 
   const link = blok.link
 
-  const width_string = cleanUndefined(blok.width)
-  const width_int = parseInt(blok.width)
-
-  var widthVal = ""
-  if (width_int > 0) {
-    widthVal = `${cleanUndefined(width_string)}px`
-    image_width = `${cleanUndefined(width_string)}px`
-  } else {
-    widthVal = `fit content`
-    image_width = `auto`
-  }
-
   return wrapLink()
 }
 

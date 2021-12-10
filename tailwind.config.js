@@ -88,6 +88,10 @@ module.exports = {
       '90p': '90%',
       '100p': '100%',
      },
+     lineHeight: {
+      'leading-3': '0.5rem',
+      '3': '0.5rem',
+    }
   },
   variants: {},
   plugins: [],

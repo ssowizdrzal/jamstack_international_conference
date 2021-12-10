@@ -46,7 +46,7 @@ export default function useStoryblok(originalStory, location) {
             resolve_relations: "posts-list.posts"
           })
           .then(({ data }) => {
-            console.log(data)
+            //console.log(data)
             if(data.story) {
               setStory(data.story)
             }

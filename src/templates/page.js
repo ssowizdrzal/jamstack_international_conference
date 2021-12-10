@@ -16,11 +16,8 @@ const Page = ({ pageContext, location }) => {
   return (
   <Layout location={location}>
     <Seo title={ story.content.title }/>
-    <h1>{ story.content.title }</h1>
+    {/* <h1>{ story.content.title }</h1> */}
     { components }
-    <p>
-    "Empty :)" 
-    </p>
   </Layout>
 )}
  
