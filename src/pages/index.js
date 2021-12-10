@@ -21,6 +21,7 @@ const IndexPage = ({ data, location }) => {
       <Seo title="Home" />
       <h1>{story.content.title}</h1>
       {components}
+
     </Layout>
   )
 }

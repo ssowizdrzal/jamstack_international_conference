@@ -1,6 +1,5 @@
 import React from "react"
 import { cleanUndefined } from "../../lib/utils"
-import { Link } from "gatsby"
 import DynamicComponent from "../dynamicComponent"
 
 
@@ -8,7 +7,7 @@ const List = ({ blok }) => {
     let rich = <div> sth gone wrong</div>
   if(blok.elements[0]){
     const richtext_list = blok.elements[0]
-    rich = <DynamicComponent blok={richtext_list} key={richtext_list._uid} />
+    rich = <DynamicComponent blok={richtext_list} index={richtext_list._uid}  />
   }
   
 

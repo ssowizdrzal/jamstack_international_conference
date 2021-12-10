@@ -1,23 +1,21 @@
 import React from "react"
-import { cleanUndefined } from "../../lib/utils"
 import { Link } from "gatsby"
 import DynamicComponent from "../dynamicComponent"
-import ListItem from "./listitem"
-import {uniqueId} from "../../lib/uniqueId"
 
 const RichTextList = ({ blok }) => {
   //console.log(blok)
 
-  const renderSwitch = (type, blok) => {
+  const renderSwitch = (type, blok, index) => {
     // console.log(blok)
     switch (type) {
       case "bullet_list":
         if (blok.content) {
-          const list_items = blok.content.map((blok) => {
+          const list_items = blok.content.map((blok, index) => {
             return (
               <DynamicComponent
                 blok={blok}
                 editable={false}
+                index = {index} 
               />
             )
           })
@@ -28,36 +26,36 @@ const RichTextList = ({ blok }) => {
       case "paragraph":
         if (blok.content) {
           const content = blok.content
-          const elements = content.map(content => {
+          const elements = content.map((content, index) => {
             if (content.type === "text") {
               let output_text = content.text
               if (content.marks) {
-                content.marks.map(type => {
+                content.marks.forEach(type=> {
                   switch (type.type) {
                     case "bold":
-                      output_text = <strong>{output_text}</strong>
+                      output_text = <strong key={index} >{output_text}</strong>
                       break
                     case "italic":
-                      output_text = <em>{output_text}</em>
+                      output_text = <em key={index} >{output_text}</em>
                       break
                     case "underline":
-                      output_text = <u>{output_text}</u>
+                      output_text = <u key={index} >{output_text}</u>
                       break
                     case "strike":
-                      output_text = <s>{output_text}</s>
+                      output_text = <s key={index} >{output_text}</s>
                       break
                     case "link":
                       const link = type.attrs
                       if ((link.linktype === "url" && link.href !== "") || (link.linktype === "asset" && link.href !== ""))  {
-                        output_text = <a href={link.href}>{output_text}</a>
+                        output_text = <a key={index}  href={link.href}>{output_text}</a>
                       }
                       if (link.linktype === "story" && link.href !== "") {
-                        output_text = <Link to={link.href}>{output_text}</Link>
+                        output_text = <Link  key={index} to={link.href}>{output_text}</Link>
                       }
                       if (link.linktype === "email" && link.href !== "") {
                        
                         const href_link = `mailto:${link.href}`
-                        output_text = <a href={href_link}>{output_text}</a>
+                        output_text = <a key={index}  href={href_link}>{output_text}</a>
                       }
                       break
                     default:
@@ -70,22 +68,21 @@ const RichTextList = ({ blok }) => {
 
             return null
           })
-          const uniq_key = uniqueId()
+  
           return (
-            <li key={uniq_key}>
-              <p>{uniq_key} {elements}</p>
+            <li key={index} >
+              <p> {elements}</p>
             </li>
           )
         }
         break
       default:
-        const uniq_key2 = uniqueId()
-        return <li key={uniq_key2}>{uniq_key2} that type isn't implemented</li>
+        return <li key={index} >that type isn't implemented</li>
     }
   }
 
-  const elements = blok.richtext_list.content.map((blok) => {
-    return renderSwitch(blok.type, blok)
+  const elements = blok.richtext_list.content.map((blok, index) => {
+    return renderSwitch(blok.type, blok, index)
   })
 
   //   const li_elements = blok.content.map((blok) => (

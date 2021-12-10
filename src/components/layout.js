@@ -43,26 +43,33 @@ const Layout = ({ children, location }) => {
         />
         {/* END OF NAVBAR */}
         {/* MAIN CONTENT */}
-          <main
-            className="p-2  "
+        <main
+          className="p-2  "
+          style={{
+            display: `flex`,
+            justifyContent: `center`,
+            flexGrow: 1,
+            marginLeft: 0,
+            marginRight: 0,
+          }}
+        >
+          <section
             style={{
-              display: `flex`,
-              justifyContent: `center`,
-              flexGrow: 1,
-              marginLeft: 0,
-              marginRight: 0,
+              overflow: "hidden",
+              maxWidth: `80%`,
+              width: `80%`,
             }}
           >
-            <section
+            {children}
+            <div
               style={{
-                overflow: "hidden",
-                maxWidth: `80%`,
-                width: `80%`,
+                width: `200px`,
+                height: `200px`,
+                background: `#204885`,
               }}
-            >
-              {children}
-            </section>
-          </main>
+            >Sebastian</div>
+          </section>
+        </main>
         {/* END OF MAIN CONTENT */}
         {/* FOOTER */}
 
