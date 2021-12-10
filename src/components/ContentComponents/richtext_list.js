@@ -3,21 +3,20 @@ import { cleanUndefined } from "../../lib/utils"
 import { Link } from "gatsby"
 import DynamicComponent from "../dynamicComponent"
 import ListItem from "./listitem"
+import {uniqueId} from "../../lib/uniqueId"
 
 const RichTextList = ({ blok }) => {
   //console.log(blok)
 
-  const renderSwitch = (type, blok, index) => {
+  const renderSwitch = (type, blok) => {
     // console.log(blok)
     switch (type) {
       case "bullet_list":
         if (blok.content) {
-          const list_items = blok.content.map((blok, index) => {
+          const list_items = blok.content.map((blok) => {
             return (
               <DynamicComponent
                 blok={blok}
-                key={index}
-                index={index}
                 editable={false}
               />
             )
@@ -71,21 +70,22 @@ const RichTextList = ({ blok }) => {
 
             return null
           })
-
+          const uniq_key = uniqueId()
           return (
-            <li key={index}>
-              <p>{elements}</p>
+            <li key={uniq_key}>
+              <p>{uniq_key} {elements}</p>
             </li>
           )
         }
         break
       default:
-        return <li key={index}>that type isn't implemented</li>
+        const uniq_key2 = uniqueId()
+        return <li key={uniq_key2}>{uniq_key2} that type isn't implemented</li>
     }
   }
 
-  const elements = blok.richtext_list.content.map((blok, index) => {
-    return renderSwitch(blok.type, blok, index)
+  const elements = blok.richtext_list.content.map((blok) => {
+    return renderSwitch(blok.type, blok)
   })
 
   //   const li_elements = blok.content.map((blok) => (

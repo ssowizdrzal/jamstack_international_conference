@@ -2,9 +2,10 @@ import React from "react"
 import { cleanUndefined } from "../../lib/utils"
 import { Link } from "gatsby"
 import DynamicComponent from "../dynamicComponent"
+import {uniqueId} from "../../lib/uniqueId"
 
-const ListItem = ({ blok, index }) => {
-  const renderListElement = (type, content, index) => {
+const ListItem = ({ blok }) => {
+  const renderListElement = (type, content) => {
     switch (type) {
       case "paragraph":
         const elements = content.map(content => {
@@ -52,20 +53,22 @@ const ListItem = ({ blok, index }) => {
 
           return null
         })
-
+        const uniq_key = uniqueId()
         return (
-          <li key={index}>
-            <p>{elements}</p>
+            
+          <li key={uniq_key}>
+            <p>{uniq_key} {elements}</p>
           </li>
         )
       default:
-        return <li key={index}>that type isn't implemented</li>
+        const uniq_key2 = uniqueId()
+        return <li key={uniq_key2}>{uniq_key2} that type isn't implemented</li>
     }
   }
 
   if (blok.content && blok.content[0].content) {
     const content = blok.content[0]
-    return renderListElement(content.type, content.content, index)
+    return renderListElement(content.type, content.content)
   }
 
   return null
