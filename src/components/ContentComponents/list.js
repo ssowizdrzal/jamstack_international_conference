@@ -79,32 +79,63 @@ const List = ({ blok }) => {
       background_color_test = true
     }
   }
+  switch (style) {
+    case "ol":
+      return (
+        <ol
+          className={` ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
+            /\s\s+/g,
+            " "
+          )}
+          style={{
+            width: widthVal,
+            height: heightVal,
+            backgroundSize: `${widthVal} ${heightVal}`,
+            marginTop: margin_top,
+            marginBottom: margin_bot,
+            marginLeft: margin_left,
+            // marginRight: margin_right,
+            color: color_test ? `${color_text}` : null,
+            backgroundColor: background_color_test
+              ? `${background_color_text}`
+              : null,
+            listStyle: `${list_decoration}`,
+          }}
+        >
+          {background_color_test}
+          {rich}
+        </ol>
+      )
+    case "ul":
+    default:
+      return (
+        <ul
+          className={` ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
+            /\s\s+/g,
+            " "
+          )}
+          style={{
+            width: widthVal,
+            height: heightVal,
+            backgroundSize: `${widthVal} ${heightVal}`,
+            marginTop: margin_top,
+            marginBottom: margin_bot,
+            marginLeft: margin_left,
+            // marginRight: margin_right,
+            color: color_test ? `${color_text}` : null,
+            backgroundColor: background_color_test
+              ? `${background_color_text}`
+              : null,
+            listStyle: `${list_decoration}`,
+          }}
+        >
+          {background_color_test}
+          {rich}
+        </ul>
+      )
+  }
 
-  return (
-    <ul
-      className={` ${style} ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
-        /\s\s+/g,
-        " "
-      )}
-      style={{
-        width: widthVal,
-        height: heightVal,
-        backgroundSize: `${widthVal} ${heightVal}`,
-        marginTop: margin_top,
-        marginBottom: margin_bot,
-        marginLeft: margin_left,
-        // marginRight: margin_right,
-        color: color_test ? `${color_text}` : null,
-        backgroundColor: background_color_test
-          ? `${background_color_text}`
-          : null,
-        listStyle: `${list_decoration}`,
-      }}
-    >
-      {background_color_test}
-      {rich}
-    </ul>
-  )
+  
 }
 
 export default List

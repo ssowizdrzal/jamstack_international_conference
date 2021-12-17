@@ -201,7 +201,6 @@ const Paragraph = ({ blok }) => {
     )
   }
 
-  console.log(blok)
   const line_height = cleanUndefined(blok.line_height[0])
   const text = blok.text
   const style = cleanUndefined(blok.style[0])

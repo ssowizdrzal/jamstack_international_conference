@@ -12,6 +12,7 @@ const Image = ({ blok }) => {
         alt={alt !== "" ? blok.image.alt : "imageplaceholderalt"}
         width={image_width}
         style={{
+          height:`auto`,
           marginTop: margin_top,
           marginBottom: margin_bot,
           marginLeft: margin_left,

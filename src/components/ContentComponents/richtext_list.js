@@ -93,7 +93,6 @@ const RichTextList = ({ blok }) => {
     }
     if (type === "blok") {
       const components = blok.attrs.body.map((blok, index) => {
-         console.log(blok.component)
         if(blok.component === "list"){
           if_list = true;
         }

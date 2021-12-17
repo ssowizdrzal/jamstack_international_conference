@@ -19,7 +19,6 @@ const IndexPage = ({ data, location }) => {
   return (
     <Layout location={location}>
       <Seo title="Home" />
-      <h1>{story.content.title}</h1>
       {components}
     </Layout>
   )
