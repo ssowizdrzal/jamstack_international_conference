@@ -20,14 +20,49 @@ const TextSpan = ({ blok }) => {
   }
 
   const text = blok.text
-  const color = cleanUndefined(blok.color[0])
+  let color = cleanUndefined(blok.color[0])
   const styling = flatStringFromArray(blok.styling)
   const text_size = cleanUndefined(blok.text_size[0])
   const border_radius = cleanUndefined(blok.border_radius[0])
   const border_style_sides = cleanUndefined(blok.border_style_sides[0])
-  const background_color = cleanUndefined(blok.background_color[0])
+  let background_color = cleanUndefined(blok.background_color[0])
 
   const link = blok.link
+
+  let color_text = `${blok.color_text ? blok.color_text : ""}`
+  let background_color_text = `${
+    blok.background_color_text ? blok.background_color_text : ""
+  }`
+
+  let color_test = false
+  let background_color_test = false
+  const regex_rgb_value =
+    /^([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]),([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]),([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/
+  const regex_hex_value = /^(#[0-9a-f]{6}|#[0-9a-f]{3})$/i
+
+  if (color_text !== "") {
+    if (regex_rgb_value.test(color_text)) {
+      color_text = `rgb(${color_text})`
+      color = ""
+      color_test = true
+    }
+    if (regex_hex_value.test(color_text)) {
+      color = ""
+      color_test = true
+    }
+  }
+
+  if (background_color_text !== "") {
+    if (regex_rgb_value.test(background_color_text)) {
+      background_color_text = `rgb(${background_color_text})`
+      background_color = ""
+      background_color_test = true
+    }
+    if (regex_hex_value.test(background_color_text)) {
+      background_color = ""
+      background_color_test = true
+    }
+  }
 
   return (
     <span
@@ -35,6 +70,12 @@ const TextSpan = ({ blok }) => {
         /\s\s+/g,
         " "
       )}
+      style={{
+        color: color_test ? `${color_text}` : null,
+        backgroundColor: background_color_test
+          ? `${background_color_text}`
+          : null,
+      }}
     >
       {wrapLink()}
     </span>

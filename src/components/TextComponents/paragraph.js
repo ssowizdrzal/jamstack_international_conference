@@ -22,7 +22,7 @@ const Paragraph = ({ blok }) => {
   const P1 = () => {
     return (
       <p
-        className={` break-words align-middle overflow-hidden ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
+        className={` break-words align-middle overflow-hidden ${line_height} ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
           /\s\s+/g,
           " "
         )}
@@ -34,6 +34,10 @@ const Paragraph = ({ blok }) => {
           marginBottom: margin_bot,
           marginLeft: margin_left,
           // marginRight: margin_right,
+          color: color_test ? `${color_text}` : null,
+          backgroundColor: background_color_test
+            ? `${background_color_text}`
+            : null,
         }}
       >
         {wrapLink()}
@@ -44,7 +48,7 @@ const Paragraph = ({ blok }) => {
   const H1 = () => {
     return (
       <h1
-        className={` break-words align-middle ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
+        className={` break-words align-middle ${line_height} ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
           /\s\s+/g,
           " "
         )}
@@ -56,6 +60,10 @@ const Paragraph = ({ blok }) => {
           marginBottom: margin_bot,
           marginLeft: margin_left,
           // marginRight: margin_right,
+          color: color_test ? `${color_text}` : null,
+          backgroundColor: background_color_test
+            ? `${background_color_text}`
+            : null,
         }}
       >
         {wrapLink()}
@@ -66,7 +74,7 @@ const Paragraph = ({ blok }) => {
   const H2 = () => {
     return (
       <h2
-        className={` break-words align-middle ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
+        className={` break-words align-middle ${line_height} ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
           /\s\s+/g,
           " "
         )}
@@ -78,6 +86,10 @@ const Paragraph = ({ blok }) => {
           marginBottom: margin_bot,
           marginLeft: margin_left,
           // marginRight: margin_right,
+          color: color_test ? `${color_text}` : null,
+          backgroundColor: background_color_test
+            ? `${background_color_text}`
+            : null,
         }}
       >
         {wrapLink()}
@@ -88,7 +100,7 @@ const Paragraph = ({ blok }) => {
   const H3 = () => {
     return (
       <h3
-        className={` break-words align-middle ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
+        className={` break-words align-middle ${line_height} ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
           /\s\s+/g,
           " "
         )}
@@ -100,6 +112,10 @@ const Paragraph = ({ blok }) => {
           marginBottom: margin_bot,
           marginLeft: margin_left,
           // marginRight: margin_right,
+          color: color_test ? `${color_text}` : null,
+          backgroundColor: background_color_test
+            ? `${background_color_text}`
+            : null,
         }}
       >
         {wrapLink()}
@@ -110,7 +126,7 @@ const Paragraph = ({ blok }) => {
   const H4 = () => {
     return (
       <h4
-        className={` break-words align-middle ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
+        className={` break-words align-middle ${line_height} ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
           /\s\s+/g,
           " "
         )}
@@ -122,6 +138,10 @@ const Paragraph = ({ blok }) => {
           marginBottom: margin_bot,
           marginLeft: margin_left,
           // marginRight: margin_right,
+          color: color_test ? `${color_text}` : null,
+          backgroundColor: background_color_test
+            ? `${background_color_text}`
+            : null,
         }}
       >
         {wrapLink()}
@@ -132,7 +152,7 @@ const Paragraph = ({ blok }) => {
   const H5 = () => {
     return (
       <h5
-        className={` break-words align-middle ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
+        className={` break-words align-middle ${line_height} ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
           /\s\s+/g,
           " "
         )}
@@ -144,6 +164,10 @@ const Paragraph = ({ blok }) => {
           marginBottom: margin_bot,
           marginLeft: margin_left,
           // marginRight: margin_right,
+          color: color_test ? `${color_text}` : null,
+          backgroundColor: background_color_test
+            ? `${background_color_text}`
+            : null,
         }}
       >
         {wrapLink()}
@@ -154,7 +178,7 @@ const Paragraph = ({ blok }) => {
   const H6 = () => {
     return (
       <h6
-        className={` break-words align-middle ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
+        className={` break-words align-middle ${line_height} ${text_size} ${styling} ${align} ${color} ${border_style_sides} ${background_color} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${border_radius} `.replace(
           /\s\s+/g,
           " "
         )}
@@ -166,6 +190,10 @@ const Paragraph = ({ blok }) => {
           marginBottom: margin_bot,
           marginLeft: margin_left,
           // marginRight: margin_right,
+          color: color_test ? `${color_text}` : null,
+          backgroundColor: background_color_test
+            ? `${background_color_text}`
+            : null,
         }}
       >
         {wrapLink()}
@@ -173,13 +201,15 @@ const Paragraph = ({ blok }) => {
     )
   }
 
+  console.log(blok)
+  const line_height = cleanUndefined(blok.line_height[0])
   const text = blok.text
   const style = cleanUndefined(blok.style[0])
   const align = cleanUndefined(blok.align[0])
-  const color = cleanUndefined(blok.color[0])
+  let color = cleanUndefined(blok.color[0])
   const text_size = cleanUndefined(blok.text_size[0])
   const border_style_sides = cleanUndefined(blok.border_style_sides[0])
-  const background_color = cleanUndefined(blok.background_color[0])
+  let background_color = cleanUndefined(blok.background_color[0])
   const padding_top = cleanUndefined(blok.padding_top[0])
   const padding_bot = cleanUndefined(blok.padding_bot[0])
   const padding_left = cleanUndefined(blok.padding_left[0])
@@ -211,6 +241,40 @@ const Paragraph = ({ blok }) => {
 
   const link = blok.link
 
+  let color_text = `${blok.color_text ? blok.color_text : ""}`
+  let background_color_text = `${
+    blok.background_color_text ? blok.background_color_text : ""
+  }`
+
+  let color_test = false
+  let background_color_test = false
+  const regex_rgb_value =
+    /^([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]),([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]),([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/
+  const regex_hex_value = /^(#[0-9a-f]{6}|#[0-9a-f]{3})$/i
+
+  if (color_text !== "") {
+    if (regex_rgb_value.test(color_text)) {
+      color_text = `rgb(${color_text})`
+      color = ""
+      color_test = true
+    }
+    if (regex_hex_value.test(color_text)) {
+      color = ""
+      color_test = true
+    }
+  }
+
+  if (background_color_text !== "") {
+    if (regex_rgb_value.test(background_color_text)) {
+      background_color_text = `rgb(${background_color_text})`
+      background_color = ""
+      background_color_test = true
+    }
+    if (regex_hex_value.test(background_color_text)) {
+      background_color = ""
+      background_color_test = true
+    }
+  }
   switch (style) {
     case "h1":
       return <H1></H1>

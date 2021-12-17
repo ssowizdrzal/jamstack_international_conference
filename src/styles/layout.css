@@ -353,8 +353,9 @@ ul {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  list-style-position: outside;
-  list-style-image: none;
+  list-style-position: inside;
+  list-style: none;
+ 
 }
 ol {
   margin-left: 0;
@@ -365,8 +366,8 @@ ol {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  list-style-position: outside;
-  list-style-image: none;
+  list-style-position: inside;
+  list-style: none;
 }
 dl {
   margin-left: 0;
@@ -491,10 +492,10 @@ li {
   margin-bottom: calc(1.45rem / 2);
 }
 ol li {
-  padding-left: 0;
+  padding-left: calc(1.45rem / 3);
 }
 ul li {
-  padding-left: 0;
+  padding-left: calc(1.45rem / 3);
 }
 li > ol {
   margin-left: 1.45rem;
@@ -621,4 +622,8 @@ p>#text {
 main > section > * {
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+main section .list-in-list{
+  list-style: none;
 }

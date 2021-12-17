@@ -9,8 +9,8 @@ const Flex = ({ blok }) => {
   var support_responsive = ""
   if (direction === "") direction = "flex-row"
   if (blok.support_responsive === "1" && direction !== "") {
-    direction = "sm:" + direction
-    if (direction === "sm:flex-row-reverse") {
+    direction = "lg:" + direction
+    if (direction === "lg:flex-row-reverse") {
       support_responsive = "flex-col-reverse"
     } else {
       support_responsive = "flex-col"
@@ -34,6 +34,7 @@ const Flex = ({ blok }) => {
     <div
       className={`flex container p-2 ${justify_content} ${direction} ${wrap} ${border_style_sides} ${support_responsive} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${background_color} ${border_radius}`}
       style={{
+        alignItems: `center`,
         marginTop: margin_top,
         marginBottom: margin_bot,
         marginLeft: margin_left,

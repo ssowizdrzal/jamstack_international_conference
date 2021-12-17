@@ -56,10 +56,14 @@ const ListItem = ({ blok, index }) => {
         </li>
       )
     }
-
-    return <li key={index}> that type isn't implemented</li>
+    if (type === "blok") {
+      return (
+        <li key={index}> that type isn't implemented [listitem blok-{type}]</li>
+      )
+    }
+    return <li key={index}> that type isn't implemented [listitem-{type}]</li>
   }
-
+  console.log(blok)
   if (blok.content && blok.content[0].content) {
     const content = blok.content[0]
     return renderListElement(content.type, content.content, index)

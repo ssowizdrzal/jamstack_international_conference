@@ -61,13 +61,6 @@ const Layout = ({ children, location }) => {
             }}
           >
             {children}
-            <div
-              style={{
-                width: `200px`,
-                height: `200px`,
-                background: `#204885`,
-              }}
-            >Sebastian</div>
           </section>
         </main>
         {/* END OF MAIN CONTENT */}

@@ -3,7 +3,6 @@ import { cleanUndefined } from "../../lib/utils"
 import { Link } from "gatsby"
 
 const Image = ({ blok }) => {
-  console.log(blok)
   const imageInput = () => {
     return (
       <img

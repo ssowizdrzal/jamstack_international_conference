@@ -3,10 +3,11 @@ import { Link } from "gatsby"
 import DynamicComponent from "../dynamicComponent"
 
 const RichTextList = ({ blok }) => {
+
+  let if_list = false;
+
   const renderListElement = (type, blok, index) => {
     if (type === "paragraph") {
-      const content = blok.content
-      console.log(content)
       if (blok.content) {
         const content = blok.content
         const elements = content.map(content => {
@@ -62,6 +63,7 @@ const RichTextList = ({ blok }) => {
             }
             return output_text
           }
+          return null
         })
 
         return (
@@ -70,78 +72,48 @@ const RichTextList = ({ blok }) => {
           </li>
         )
       }
+      return null
     }
     if (type === "bullet_list") {
-      if (blok.content) {
-        const list_items = blok.content.map((blok, index) => {
-          return (
-            <DynamicComponent
-              blok={blok}
-              editable={false}
-              key={index}
-              index={index}
-            />
-          )
-        })
-        return list_items
-      }
+      // if (blok.content) {
+      //   const list_items = blok.content.map((blok, index) => {
+      //     return (
+      //       <DynamicComponent
+      //         blok={blok}
+      //         editable={false}
+      //         key={index}
+      //         index={index}
+      //       />
+      //     )
+      //   })
+      //   if_list=true;
+      //   return list_items
+      // }
+      // return null
     }
+    if (type === "blok") {
+      const components = blok.attrs.body.map((blok, index) => {
+         console.log(blok.component)
+        if(blok.component === "list"){
+          if_list = true;
+        }
+        return <DynamicComponent blok={blok} key={blok._uid} />
+      })
+      if(if_list){
+        return <li className="list-in-list" key={index}>{components}</li>
 
-    return <li key={index}> that type isn't implemented</li>
+      }
+      return <li className="" key={index}>{components}</li>
+    }
+    return (
+      <li key={index}> that type isn't implemented [richtextlist-{type}]</li>
+    )
   }
 
   const elements = blok.richtext_list.content.map((blok, index) => {
     return renderListElement(blok.type, blok, index)
   })
-
-  //   const li_elements = blok.content.map((blok) => (
-  //     console.log(blok)
-  //   ))
-  //   const imageInput = () => {
-  //     return (
-  //       <img
-  //         className=" m-0"
-  //         src={src}
-  //         id={id}
-  //         alt={alt !== "" ? blok.image.alt : "imageplaceholderalt"}
-  //         width={image_width}
-  //         style={{
-  //           marginTop: margin_top,
-  //           marginBottom: margin_bot,
-  //           marginLeft: margin_left,
-  //           marginRight: `0px`,
-  //         }}
-  //       />
-  //     )
-  //   }
-
-  //   const wrapLink = () => {
-  //     if (link.url === "" && link.id === "" && link.cached_url === "") {
-  //       return imageInput()
-  //     }
-  //     if (link.linktype === "url" && link.url !== "") {
-  //       const href_link = cleanUndefined(link.cached_url)
-  //       return <a href={href_link}>{imageInput()}</a>
-  //     }
-  //     if (link.linktype === "story" && link.id !== "") {
-  //       const url = cleanUndefined(link.cached_url)
-  //       const stringed = "/" + url
-  //       return <Link to={stringed}>{imageInput()}</Link>
-  //     }
-  //     return imageInput()
-  //   }
-
-  //   const src = cleanUndefined(blok.image.filename)
-  //   const id = cleanUndefined(blok._uid)
-  //   const alt = cleanUndefined(blok.image.alt)
-  //   let image_width = cleanUndefined(blok.width)
-  //   const margin_top = `${blok.margin_top ? blok.margin_top : "5"}px`
-  //   const margin_bot = `${blok.margin_bot ? blok.margin_bot : "5"}px`
-  //   const margin_left = `${blok.margin_left ? blok.margin_left : "5"}px`
-
-  //   const link = blok.link
-
-  return <ol> {elements}</ol>
+  return elements
 }
 
 export default RichTextList
