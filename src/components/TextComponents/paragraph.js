@@ -224,7 +224,7 @@ const Paragraph = ({ blok }) => {
   if (width_int >= 0) {
     widthVal = `${cleanUndefined(width_string)}px`
   } else {
-    widthVal = "auto"
+    widthVal = "100%"
   }
   if (height_int >= 0) {
     heightVal = `${cleanUndefined(height_string)}px`

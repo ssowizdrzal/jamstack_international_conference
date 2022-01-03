@@ -1,7 +1,7 @@
 import React from "react"
-import DynamicComponent from "./dynamicComponent"
-import { cleanUndefined } from "../lib/utils"
-const Flex = ({ blok }) => {
+import DynamicComponent from "../dynamicComponent"
+import { cleanUndefined } from "../../lib/utils"
+const FeatureList = ({ blok }) => {
   var direction = cleanUndefined(blok.direction[0])
   const wrap = cleanUndefined(blok.wrap[0])
   const border_style_sides = cleanUndefined(blok.border_style_sides[0])
@@ -17,7 +17,7 @@ const Flex = ({ blok }) => {
     }
   } else {
   }
-
+  const title = cleanUndefined(blok.title)
   const padding_top = cleanUndefined(blok.padding_top[0])
   const padding_bot = cleanUndefined(blok.padding_bot[0])
   const padding_left = cleanUndefined(blok.padding_left[0])
@@ -28,22 +28,32 @@ const Flex = ({ blok }) => {
   const margin_top = `${blok.margin_top ? blok.margin_top : "5"}px`
   const margin_bot = `${blok.margin_bot ? blok.margin_bot : "5"}px`
   const margin_left = `${blok.margin_left ? blok.margin_left : "5"}px`
-  // const margin_right = `${blok.margin_right ? blok.margin_right : "5"}px`
+
+  const width_string = cleanUndefined(blok.width)
+  const width_int = parseInt(blok.width)
+  var widthVal = ""
+  if (width_int >= 0) {
+    widthVal = `${cleanUndefined(width_string)}px`
+  } else {
+    widthVal = "inherit"
+  }
 
   return (
     <div
-      className={`flex container pb-2 pr-2 ${justify_content} ${direction} ${wrap} ${border_style_sides} ${support_responsive} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${background_color} ${border_radius}`}
+      className={`flex container pr-2 pb-2 ${justify_content} ${direction} ${wrap} ${border_style_sides} ${support_responsive} ${padding_top} ${padding_bot} ${padding_left} ${padding_right} ${background_color} ${border_radius}`}
       style={{
-        alignItems: `center`,
         marginTop: margin_top,
         marginBottom: margin_bot,
         marginLeft: margin_left,
         // marginRight: '50px',
-        width: `100%`,
+        width: widthVal,
+        backgroundSize: `${widthVal} auto`,
       }}
-    >
-      {blok.elements.map(blok => (
-        <div key={blok._uid} className="pb-2 pr-2 continuum">
+    > 
+    
+    { title? title: null}
+      {blok.features.map(blok => (
+        <div key={blok._uid} className="pr-2 pb-2">
           <DynamicComponent blok={blok} />
         </div>
       ))}
@@ -51,4 +61,4 @@ const Flex = ({ blok }) => {
   )
 }
 
-export default Flex
+export default FeatureList

@@ -627,3 +627,14 @@ main > section > * {
 main section .list-in-list{
   list-style: none;
 }
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  border-top: 1px solid gray;
+  gap: 1rem;
+  flex-direction: row;
+  align-items: flex-start
+  
+}

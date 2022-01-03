@@ -14,6 +14,8 @@ import EmptyGrid from "./ContentComponents/emptygrid"
 import List from "./ContentComponents/list"
 import RichTextList from "./ContentComponents/richtext_list"
 import ListItem from "./ContentComponents/listitem"
+import NavLink from "./GlobalComponents/nav_link"
+import FeatureList from "./GlobalComponents/feature_list"
 
 const Components = {
   teaser: Teaser,
@@ -29,8 +31,9 @@ const Components = {
   empty_grid_space: EmptyGrid,
   list: List,
   richtext_list: RichTextList,
-  list_item: ListItem
-
+  list_item: ListItem,
+  nav_link: NavLink,
+  feature_list: FeatureList,
 }
 
 const DynamicComponent = ({ blok, editable = true, index }) => {
