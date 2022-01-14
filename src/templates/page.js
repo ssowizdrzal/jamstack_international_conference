@@ -8,10 +8,16 @@ import useStoryblok from "../lib/storyblok"
 const Page = ({ pageContext, location }) => { 
   let story = pageContext.story
   story = useStoryblok(story, location)
+  console.log(story)
+  console.log(story.content)
+  console.log(story.content.body)
+  let components = null;
+  if(story.content.body){
+    components = story.content.body.map(blok => {
+      return (<DynamicComponent blok={blok} key={blok._uid} />)
+    })
+  }
  
-  const components = story.content.body.map(blok => {
-    return (<DynamicComponent blok={blok} key={blok._uid} />)
-  })
  
   return (
   <Layout location={location}>

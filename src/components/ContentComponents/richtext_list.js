@@ -108,10 +108,13 @@ const RichTextList = ({ blok }) => {
       <li key={index}> that type isn't implemented [richtextlist-{type}]</li>
     )
   }
+  let elements = null;
+  if(blok.richtext_list.content){
+    elements = blok.richtext_list.content.map((blok, index) => {
+      return renderListElement(blok.type, blok, index)
+    })
+  }
 
-  const elements = blok.richtext_list.content.map((blok, index) => {
-    return renderListElement(blok.type, blok, index)
-  })
   return elements
 }
 
