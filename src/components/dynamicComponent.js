@@ -16,6 +16,7 @@ import RichTextList from "./ContentComponents/richtext_list"
 import ListItem from "./ContentComponents/listitem"
 import NavLink from "./GlobalComponents/nav_link"
 import FeatureList from "./GlobalComponents/feature_list"
+import HorizontalRule from "./GlobalComponents/hr"
 
 const Components = {
   teaser: Teaser,
@@ -34,6 +35,7 @@ const Components = {
   list_item: ListItem,
   nav_link: NavLink,
   feature_list: FeatureList,
+  hr: HorizontalRule,
 }
 
 const DynamicComponent = ({ blok, editable = true, index }) => {

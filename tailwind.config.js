@@ -102,10 +102,13 @@ module.exports = {
       "leading-5",
       "leading-6",
       "leading-7",
+      "leading-8",
+      "leading-9",
       //list style
       "ol",
       "ul",
       //padding bot
+      "pb-0",
       "pb-2",
       "pb-4",
       "pb-8",
@@ -114,6 +117,7 @@ module.exports = {
       "pb-48",
       "pb-96",
       //padding left
+      "pl-0",
       "pl-2",
       "pl-4",
       "pl-8",
@@ -122,6 +126,7 @@ module.exports = {
       "pl-48",
       "pl-96",
       //padding right
+      "pr-0",
       "pr-2",
       "pr-4",
       "pr-8",
@@ -130,6 +135,7 @@ module.exports = {
       "pr-48",
       "pr-96",
       //padding top
+      "pt-0",
       "pt-2",
       "pt-4",
       "pt-8",
@@ -143,6 +149,9 @@ module.exports = {
       "line-through",
       "font-bold",
       //text_size
+      "text-xs3",
+      "text-xs2",
+      "text-xs1",
       "text-xs",
       "text-sm",
       "text-base",
@@ -167,6 +176,9 @@ module.exports = {
       },
     },
     fontSize: {
+      xs3: [".2rem", ".3rem"],
+      xs2: [".3rem", ".4rem"],
+      xs1: [".4rem", ".5rem"],
       xs: [".5rem", ".6rem"],
       sm: [".75rem", ".85rem"],
       tiny: [".85rem", "1rem"],
@@ -200,6 +212,10 @@ module.exports = {
       6: "1.25rem",
       "leading-7": "1.5rem",
       7: "1.5rem",
+      "leading-8": "2rem",
+      7: "2rem",
+      "leading-9": "2.5rem",
+      7: "2.5rem",
     },
   },
   variants: {},

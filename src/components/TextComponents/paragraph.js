@@ -32,7 +32,7 @@ const Paragraph = ({ blok }) => {
           backgroundSize: `${widthVal} ${heightVal}`,
           marginTop: margin_top,
           marginBottom: margin_bot,
-          marginLeft: margin_left,
+          //marginLeft: margin_left,
           // marginRight: margin_right,
           color: color_test ? `${color_text}` : null,
           backgroundColor: background_color_test
@@ -58,7 +58,7 @@ const Paragraph = ({ blok }) => {
           backgroundSize: `${widthVal} ${heightVal}`,
           marginTop: margin_top,
           marginBottom: margin_bot,
-          marginLeft: margin_left,
+          //marginLeft: margin_left,
           // marginRight: margin_right,
           color: color_test ? `${color_text}` : null,
           backgroundColor: background_color_test
@@ -84,7 +84,7 @@ const Paragraph = ({ blok }) => {
           backgroundSize: `${widthVal} ${heightVal}`,
           marginTop: margin_top,
           marginBottom: margin_bot,
-          marginLeft: margin_left,
+          //marginLeft: margin_left,
           // marginRight: margin_right,
           color: color_test ? `${color_text}` : null,
           backgroundColor: background_color_test
@@ -110,7 +110,7 @@ const Paragraph = ({ blok }) => {
           backgroundSize: `${widthVal} ${heightVal}`,
           marginTop: margin_top,
           marginBottom: margin_bot,
-          marginLeft: margin_left,
+          //marginLeft: margin_left,
           // marginRight: margin_right,
           color: color_test ? `${color_text}` : null,
           backgroundColor: background_color_test
@@ -136,7 +136,7 @@ const Paragraph = ({ blok }) => {
           backgroundSize: `${widthVal} ${heightVal}`,
           marginTop: margin_top,
           marginBottom: margin_bot,
-          marginLeft: margin_left,
+          //marginLeft: margin_left,
           // marginRight: margin_right,
           color: color_test ? `${color_text}` : null,
           backgroundColor: background_color_test
@@ -162,7 +162,7 @@ const Paragraph = ({ blok }) => {
           backgroundSize: `${widthVal} ${heightVal}`,
           marginTop: margin_top,
           marginBottom: margin_bot,
-          marginLeft: margin_left,
+          //marginLeft: margin_left,
           // marginRight: margin_right,
           color: color_test ? `${color_text}` : null,
           backgroundColor: background_color_test
@@ -188,7 +188,7 @@ const Paragraph = ({ blok }) => {
           backgroundSize: `${widthVal} ${heightVal}`,
           marginTop: margin_top,
           marginBottom: margin_bot,
-          marginLeft: margin_left,
+          //marginLeft: margin_left,
           // marginRight: margin_right,
           color: color_test ? `${color_text}` : null,
           backgroundColor: background_color_test
