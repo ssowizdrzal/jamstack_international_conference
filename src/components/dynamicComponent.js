@@ -19,7 +19,6 @@ import FeatureList from "./GlobalComponents/feature_list"
 import HorizontalRule from "./GlobalComponents/hr"
 
 const Components = {
-  teaser: Teaser,
   paragraph: Paragraph,
   span: Span,
   text: TextSpan,

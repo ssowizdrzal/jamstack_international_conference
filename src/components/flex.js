@@ -40,7 +40,6 @@ const Flex = ({ blok }) => {
     /^([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]),([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]),([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/
   const regex_hex_value = /^(#[0-9a-f]{6}|#[0-9a-f]{3})$/i
 
-  console.log(background_color_text)
   if (background_color_text !== "") {
     if (regex_rgb_value.test(background_color_text)) {
       background_color_text = `rgb(${background_color_text})`

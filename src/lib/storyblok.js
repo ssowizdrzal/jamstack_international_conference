@@ -19,7 +19,7 @@ export default function useStoryblok(originalStory, location) {
     story.content = JSON.parse(story.content)
   }
   
-  // see https://www.storyblok.com/docs/Guides/storyblok-latest-js
+  // https://www.storyblok.com/docs/Guides/storyblok-latest-js
   function initEventListeners() {
     const { StoryblokBridge } = window
 
@@ -29,24 +29,20 @@ export default function useStoryblok(originalStory, location) {
       })
 
       storyblokInstance.on(['published', 'change'], (event) => {
-        // reloade project on save an publish
         window.location.reload(true)
       })  
   
       storyblokInstance.on('input', (event) => {
-        // live updates when editing
         setStory(event.story)
       }) 
 
       storyblokInstance.on('enterEditmode', (event) => {
-        // loading the draft version on initial view of the page
         sbClient
           .get(`cdn/stories/${event.storyId}`, {
             version: 'draft',
             resolve_relations: "posts-list.posts"
           })
           .then(({ data }) => {
-            //console.log(data)
             if(data.story) {
               setStory(data.story)
             }
@@ -59,7 +55,6 @@ export default function useStoryblok(originalStory, location) {
   }
 
   function addBridge(callback) {
-      // check if the script is already present
       const existingScript = document.getElementById("storyblokBridge");
       if (!existingScript) {
         const script = document.createElement("script");
@@ -67,7 +62,6 @@ export default function useStoryblok(originalStory, location) {
         script.id = "storyblokBridge";
         document.body.appendChild(script);
         script.onload = () => {
-          // call a function once the bridge is loaded
           callback()
         };
       } else {
@@ -76,12 +70,9 @@ export default function useStoryblok(originalStory, location) {
   }
 
   useEffect(() => {
-    // load bridge only inside the storyblok editor
     if(location.search.includes("_storyblok")) {
-      // first load the bridge and then attach the events
       addBridge(initEventListeners)
     }
-  }, [location.search]) // it's important to run the effect only once to avoid multiple event attachment
-
+  }, [location.search]) 
   return story;
 }

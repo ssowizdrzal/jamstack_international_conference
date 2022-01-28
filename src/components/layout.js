@@ -51,7 +51,6 @@ const Layout = ({ children, location }) => {
             flexGrow: 1,
             marginLeft: 0,
             marginRight: 0,
-        
           }}
         >
           <section
@@ -66,7 +65,6 @@ const Layout = ({ children, location }) => {
         </main>
         {/* END OF MAIN CONTENT */}
         {/* FOOTER */}
-
         <Footer location={location} footerContent={story.content.footer} />
         {/* END OF FOOTER */}
       </div>
