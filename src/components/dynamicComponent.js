@@ -1,5 +1,4 @@
 import SbEditable from "storyblok-react"
-import Teaser from "./teaser"
 import React from "react"
 import Paragraph from "./TextComponents/paragraph"
 import Span from "./TextComponents/span"

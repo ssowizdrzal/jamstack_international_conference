@@ -605,7 +605,7 @@ main {
 
 ::selection { background-color: #855d81; }
 
-.continuum > div{
+.continuum > img{
   width: fit-content;
   height: fit-content;
 }

@@ -148,6 +148,16 @@ module.exports = {
       "underline",
       "line-through",
       "font-bold",
+      //text color
+      "text-black",
+      "text-white",
+      "text-gray-300",
+      "text-red-500",
+      "text-yellow-200",
+      "text-green-200",
+      "text-blue-200",
+      "text-purple-300",
+      "text-pink-200",
       //text_size
       "text-xs3",
       "text-xs2",

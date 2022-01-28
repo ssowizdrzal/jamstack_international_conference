@@ -169,6 +169,7 @@ const Footer = ({ location, footerContent }) => {
             marginRight: `auto`,
           }}
         >
+          <hr></hr>
           <div
             className={`features pb-2 ${footer_features_align} ${footer_features_text_size} ${footer_features_line_height} ${footer_features_styling} ${footer_features_color} ${footer_features_background_color} ${footer_features_padding_top} ${footer_features_padding_bot} ${footer_features_padding_left} ${footer_features_padding_right}`.replace(
               /\s\s+/g,
