@@ -76,6 +76,9 @@ const Navbar = ({ siteTitle, headerContent, location }) => {
             alt={"logo"}
             width={image_width}
             height={image_height}
+            style={{
+              marginRight: `10px`
+            }}
           />
         </a>
       )

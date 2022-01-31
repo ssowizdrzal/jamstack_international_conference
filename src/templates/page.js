@@ -6,8 +6,8 @@ import DynamicComponent from "../components/dynamicComponent"
 import useStoryblok from "../lib/storyblok"
 
 const Page = ({ pageContext, location }) => {
-  let story = pageContext.story
-  story = useStoryblok(story, location)
+
+  let story = useStoryblok(pageContext.story, location)
   let components = null
 
   if (story.content.body) {

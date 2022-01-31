@@ -11,10 +11,12 @@ import useStoryblok from "../lib/storyblok"
 const IndexPage = ({ data, location }) => {
   let story = data.storyblokEntry
   story = useStoryblok(story, location)
-
-  const components = story.content.body.map(blok => {
-    return <DynamicComponent blok={blok} key={blok._uid} />
-  })
+  let components = null
+  if (story.content && story.content.body) {
+    components = story.content.body.map(blok => {
+      return <DynamicComponent blok={blok} key={blok._uid} />
+    })
+  }
 
   return (
     <Layout location={location}>
