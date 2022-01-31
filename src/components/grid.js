@@ -59,6 +59,7 @@ const Grid = ({ blok }) => {
         marginTop: margin_top,
         marginBottom: margin_bot,
         marginLeft: margin_left,
+        alignItems: `center`,
         width: `100%`,
       }}
     >

@@ -235,8 +235,6 @@ const Paragraph = ({ blok }) => {
 
   const margin_top = `${blok.margin_top ? blok.margin_top : "5"}px`
   const margin_bot = `${blok.margin_bot ? blok.margin_bot : "5"}px`
-  const margin_left = `${blok.margin_left ? blok.margin_left : "5"}px`
-  // const margin_right = `${blok.margin_right ? blok.margin_right : "5"}px`
 
   const link = blok.link
 

@@ -73,6 +73,6 @@ export default function useStoryblok(originalStory, location) {
     if(location.search.includes("_storyblok")) {
       addBridge(initEventListeners)
     }
-  }, [location.search]) 
+  }, []) 
   return story;
 }
