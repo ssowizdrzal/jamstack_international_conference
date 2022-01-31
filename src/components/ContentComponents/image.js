@@ -12,7 +12,7 @@ const Image = ({ blok }) => {
         alt={alt !== "" ? blok.image.alt : "imageplaceholderalt"}
         width={image_width}
         style={{
-          height:`auto`,
+          height: height_val,
           marginTop: margin_top,
           marginBottom: margin_bot,
           marginLeft: margin_left,
@@ -41,10 +41,14 @@ const Image = ({ blok }) => {
   const src = cleanUndefined(blok.image.filename)
   const id = cleanUndefined(blok._uid)
   const alt = cleanUndefined(blok.image.alt)
-  let image_width = cleanUndefined(blok.width)
+  let image_width = `${cleanUndefined(blok.width)}px`
   const margin_top = `${blok.margin_top ? blok.margin_top : "5"}px`
   const margin_bot = `${blok.margin_bot ? blok.margin_bot : "5"}px`
   const margin_left = `${blok.margin_left ? blok.margin_left : "5"}px`
+  let height_val = `auto`
+  if(src.includes("wit_logo")){
+    height_val= image_width
+  }
 
   const link = blok.link
 

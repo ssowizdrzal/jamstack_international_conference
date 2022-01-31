@@ -68,8 +68,6 @@ const Grid = ({ blok }) => {
           backgroundColor: background_color_test
             ? `${background_color_text}`
             : null,
-            alignSelf: `center`,
-            justifySelf: `center`
         }}>
           <DynamicComponent blok={blok} />
         </div>
